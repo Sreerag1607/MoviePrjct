@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class="container">
+<form method="post" enctype="multipart/form-data" >
+    {% csrf_token %}
+<!--    the form we can see here is from the function update in dict we gave form and movie that form is this-->
+    {{form.as_p}}
+    <input type="submit">
+</form>
+</div>
+{% endblock %}

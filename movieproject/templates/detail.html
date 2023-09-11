@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block body %}
+
+<div class="container-fluid">
+    <div class="row mt-3">
+        <div class="col-md-4 ">
+           <img src="{{movie.img.url}}" width="400px" height="400px">
+        </div>
+        <div class="col-md-8">
+            <h2>{{movie.name}}</h2><br>
+            <h3>{{movie.year}}</h3><br>
+            <h4>{{movie.desc}}</h4><br>
+
+            <!--now this is a link we need to set it has a button so give class="btn btn-danger"-->
+            <a class="btn btn-primary" href="{% url 'movieapp:update' movie.id %}">Update</a>
+            <a class="btn btn-danger" href="{% url 'movieapp:delete' movie.id %}">Delete</a>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

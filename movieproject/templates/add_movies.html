@@ -1,0 +1,86 @@
+{% load static %}
+<!--<!DOCTYPE html>-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration Page</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+     <link rel="stylesheet" href="{% static 'style.css' %}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .registration-container {
+            width: 300px;
+            margin: 100px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #E3E6E3;
+        }
+
+        .registration-container label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .registration-container input[type="text"],
+        .registration-container input[type="file"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        .registration-container input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            border: none;
+            border-radius: 3px;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .registration-container input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar" style="background-color: #e3f2fd;">
+  <div class="container-fluid">
+    <span class="navbar-brand mb-0 h1"> ONLINE MOVIES STORE</span>
+  </div>
+</nav>
+<div class="registration-container">
+    <h2 align="center" style="font-family: Georgia, serif;">Add Movies</h2>
+    <div class="row ">
+        <div>
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div>
+                    <input type="text" name="name" placeholder="Enter The Movie Name" required>
+                </div>
+                <div>
+                    <input type="text" name="desc" placeholder="Enter About Movie" required>
+                </div>
+                <div>
+                    <input type="text" name="year" placeholder="Enter The Year" >
+                </div>
+                <div>
+                    <input type="file" name="img"  >
+                </div>
+                <div>
+                    <input type="submit">
+                </div>
+            </form>
+        </div>
+
+    </div>
+
+</div>
+</body>
+</html>
